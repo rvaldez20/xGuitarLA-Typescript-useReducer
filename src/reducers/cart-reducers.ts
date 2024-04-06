@@ -22,7 +22,7 @@ export const initialState:CartState = {
 }
 
 
-export const CartReducer = (
+export const cartReducer = (
       state: CartState = initialState,
       action: CartActions
    ) => {

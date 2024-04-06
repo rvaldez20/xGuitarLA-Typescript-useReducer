@@ -1,7 +1,9 @@
+import { useReducer } from 'react'
 
 import Guitar from './components/Guitar'
 import Header from './components/Header'
 import { useCart } from './hooks/useCart'
+import { cartReducer, initialState } from './reducers/cart-reducers'
 
 function App() {
 
@@ -17,6 +19,10 @@ function App() {
     isEmpty,
     cartTotal,
   } = useCart()
+
+  //? ===== Custom Hook =====
+  const [state, dispatch] = useReducer(cartReducer, initialState)
+  console.log(state)
 
   return (
     <>
