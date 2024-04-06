@@ -1,5 +1,4 @@
 import { useState, useEffect, useMemo } from 'react'
-import { db } from '../data/db'
 import type { CartItem, Guitar, GuitarID } from '../types'
 
 export const useCart = () => {
@@ -10,7 +9,6 @@ export const useCart = () => {
    }
 
    // en el state de la data se quita la funcion setData porque no se usa  
-   const [data] = useState(db)
    const [cart, setCart] = useState(initialCart)
    
    const MIN_ITEMS = 1
@@ -78,7 +76,6 @@ export const useCart = () => {
    const cartTotal = useMemo (() => cart.reduce((total, item) => total + (item.price * item.quantity), 0), [cart])
 
    return {
-      data,
       cart,
       addToCart,
       removeFromCart,
