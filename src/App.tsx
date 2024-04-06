@@ -9,9 +9,7 @@ function App() {
 
   //! Custom Hook useCart
   const {  
-    data,
     cart,
-    addToCart,
     removeFromCart,
     decreaseQuantity,
     increaseQuantity,
@@ -22,7 +20,6 @@ function App() {
 
   //? ===== Custom Hook =====
   const [state, dispatch] = useReducer(cartReducer, initialState)
-  console.log(state)
 
   return (
     <>
@@ -44,7 +41,7 @@ function App() {
             <Guitar
               key={guitar.image}
               guitar={guitar}
-              addToCart={addToCart}
+              dispatch={dispatch}
             />
           ))}
           
