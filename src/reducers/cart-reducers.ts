@@ -31,7 +31,6 @@ export const cartReducer = (
 
 
    if(action.type === 'add-to-cart') {
-
       const itemExists = state.cart.find(guitar => guitar.id === action.payload.item.id)
       console.log(state.cart)
 
@@ -54,7 +53,6 @@ export const cartReducer = (
          const newItem:CartItem = {...action.payload.item, quantity: 1} //convercio de Type: de Guitar a cardItem
          updateCart = [...state.cart, newItem]
       }
-
       return {
          ...state,
          cart: updateCart,
@@ -63,9 +61,10 @@ export const cartReducer = (
 
 
    if(action.type === 'remove-from-cart') {
-
+      const updatedCart = state.cart.filter(item => item.id !== action.payload.id)
       return {
          ...state,
+         cart: updatedCart
       }
    }
 

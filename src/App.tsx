@@ -9,13 +9,9 @@ function App() {
 
   //! Custom Hook useCart
   const {  
-    cart,
-    removeFromCart,
     decreaseQuantity,
     increaseQuantity,
     clearCart,
-    isEmpty,
-    cartTotal,
   } = useCart()
 
   //? ===== Custom Hook =====
@@ -24,13 +20,11 @@ function App() {
   return (
     <>
       <Header 
-        cart={cart}
-        removeFromCart={removeFromCart}
+        cart={state.cart}
+        dispatch={dispatch}
         decreaseQuantity={decreaseQuantity}
         increaseQuantity={increaseQuantity}
         clearCart={clearCart}
-        isEmpty={isEmpty}
-        cartTotal={cartTotal}
       />
 
       <main className="container-xl mt-5">
