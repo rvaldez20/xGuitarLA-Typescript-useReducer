@@ -2,7 +2,7 @@ import { db } from "../data/db";
 import { CartItem, Guitar } from "../types";
 
 
-export type CartActivity = 
+export type CartActions = 
    { type: 'add-to-cart', payload: {item: Guitar} } |
    { type: 'remove-from-cart', payload: {id: Guitar['id']} } |
    { type: 'decrease-quantity', payload: {id: Guitar['id']} } |
@@ -10,12 +10,24 @@ export type CartActivity =
    { type: 'clear-cart' }
 
 
-   export type CartState = {
-      data: Guitar[],
-      cart: CartItem[],
-   }
+export type CartState = {
+   data: Guitar[],
+   cart: CartItem[],
+}
 
-   export const initialState:CartState = {
-      data: db,
-      cart: []
-   }
+
+export const initialState:CartState = {
+   data: db,
+   cart: []
+}
+
+
+export const CartReducer = (
+      state: CartState = initialState,
+      action: CartActions
+   ) => {
+
+   
+
+}
+
