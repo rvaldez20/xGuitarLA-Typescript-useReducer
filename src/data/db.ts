@@ -13,7 +13,7 @@ export const db:Guitar[] = [
        name: 'SRV',
        image: 'guitarra_02',
        description: 'Morbi ornare augue nisl, vel elementum dui mollis vel. Curabitur non ex id eros fermentum hendrerit.',
-       price: 349,
+       price: 400,
    },
    {
        id: 3,
